@@ -15,8 +15,10 @@
         <form action="managing.php" method="POST">
             <input type="text" name="aduser" placeholder="Username"> <br>
             <input type="password" name="adpass" placeholder="Password"> <br>
-            <input type="submit" value="Login">
         </form>
+        <br>
+            <input type="submit" value="Login">
+       
 </body>
 
 </html>
