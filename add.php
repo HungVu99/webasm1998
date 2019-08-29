@@ -19,6 +19,9 @@
                 $name = $_POST["proname"];
                 $price = $_POST["price"];
                 $descrip = $_POST["descrip"];
+                $hinhanh=$_FILES['hinhanh']['name'];
+                $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
+                move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
                 if ($name == ""||$price == ""|| $descrip == "") 
                     {
                         ?>
@@ -41,7 +44,7 @@
                         }
                         else
                         {
-                            $sql = "INSERT INTO product(proname, price, descrip) VALUES ('$name','$price','$descrip')";
+                            $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
@@ -57,6 +60,8 @@
             <input type="text" name="proname" placeholder="Name"> <br>
             <input type="text" name="price" placeholder="Price"> <br>
             <input type="text" name="descrip" placeholder="Description"> <br>
+            <input type="file" name="hinhanh" placeholder="image" border = "1px">
+
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
