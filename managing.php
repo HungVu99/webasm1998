@@ -61,13 +61,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
                             <input class="edit-btn" type='submit' value='Delete'>
                         </form> <br>
 
-                        <form action="/update.php" method="POST">
-                            <input type='hidden' name='productid' value='<?php echo $row['productid']?>'>
-                            <input type='hidden' name='name' value='<?php echo $row['proname']?>'>
-                            <input type='hidden' name='price' value='<?php echo $row['price']?>'>
-                            <input type='hidden' name='descrip' value='<?php echo $row['descrip']?>'>
-                            <input class="edit-btn" type='submit' value='Update'>
-                        </form>
+                        
                     </td>
                 </tr>
             <?php
