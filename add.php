@@ -22,28 +22,31 @@
                 $hinhanh=$_FILES['hinhanh']['name'];
                 $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-
                 if ($name == ""||$price == ""|| $descrip == "") 
                     {
-                        echo "Information should not be blank!!";
+                        ?>
+                        <script>
+                            alert("Product information should not be blank!!");
+                        </script>
+                        <?php
                     }
                 else
                     {
-                        $sql = "select * from product where proname ='$name'";
+                        $sql = "select * from product where proname='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
-                            echo "Product is already available!!";
+                        ?> 
+                            <script>
+                                alert("The product is available!!");
+                            </script>
+                        <?php
                         }
                         else
                         {
                             $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
                             pg_query($conn,$sql);
-                            echo  "Sign Up successful!!";
-                        }
-                    }
-            }
-             ?> 
+                            ?> 
                                 <script>
                                     alert(" Successful!");
                                     window.location.href = "/managing.php";
