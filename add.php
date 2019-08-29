@@ -22,40 +22,29 @@
                 $hinhanh=$_FILES['hinhanh']['name'];
                 $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
+
                 if ($name == ""||$price == ""|| $descrip == "") 
                     {
-                        ?>
-                        <script>
-                            alert("Product information should not be blank!!");
-                        </script>
-                        <?php
+                        echo "Information should not be blank!!";
                     }
                 else
                     {
-                        $sql = "select * from product where proname='$name'";
+                        $sql = "select * from product where proname ='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
-                        ?> 
-                            <script>
-                                alert("The product is available!!");
-                            </script>
-                        <?php
+                            echo "Product is already available!!";
                         }
                         else
                         {
                             $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
                             pg_query($conn,$sql);
-                            ?> 
-                                <script>
-                                    alert(" Successful!");
-                                    window.location.href = "/managing.php";
-                                </script>
-                            <?php
+                            echo  "Sign Up successful!!";
                         }
                     }
             }
-			?>
+             ?>
+                    
         <form action="add.php" method="POST">
             <input type="text" name="proname" placeholder="Name"> <br>
             <input type="text" name="price" placeholder="Price"> <br>
