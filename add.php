@@ -11,7 +11,7 @@
 
 <body>
     <div>
-        <h1>Adding Product Form</h1>
+        <h1>Add Information Of Product In Here</h1>
         <?php 
         require("connect.php");   
         if(isset($_POST["submit"]))
@@ -45,7 +45,7 @@
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
-                                    alert("Added successful!");
+                                    alert(" Successful!");
                                     window.location.href = "/managing.php";
                                 </script>
                             <?php
@@ -57,9 +57,9 @@
             <input type="text" name="proname" placeholder="Name"> <br>
             <input type="text" name="price" placeholder="Price"> <br>
             <input type="text" name="descrip" placeholder="Description"> <br>
-            <button type="submit" value="Add" name="submit">Add</button>
+            <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
-        
+        <br>
         <button><a href="/managing.php">Back</a></button>
     </div>
 </body>
