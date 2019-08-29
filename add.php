@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div>
-        <h1>Add Information Of Product In Here</h1>
+    <div class="content">
+        <h1 font-style: >Add New Product </h1>
         <?php 
         require("connect.php");   
         if(isset($_POST["submit"]))
@@ -44,16 +44,15 @@
                     }
             }
              ?>
-                    
-        <form action="add.php" method="POST">
-            <input type="text" name="proname" placeholder="Name"> <br>
-            <input type="text" name="price" placeholder="Price"> <br>
-            <input type="text" name="descrip" placeholder="Description"> <br>
-            <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
-            <button type="submit" value="Add" name="submit">Add Information</button>
+        <form action="add.php" method="POST" enctype="multipart/form-data">
+            <input type="text" width="300" height="100" name="proname" placeholder="Name"> <br>
+            <input type="text" width="300" height="100" name="price" placeholder="Price"> <br>
+            <input type="text" width="300" height="100" name="descrip" placeholder="Description"> <br>
+            <input type="file" name="hinhanh" placeholder="image" border = "1px">
+            <button type="submit" value="Add" name="submit">Add</button>
         </form>
-        <br>
-        <button><a href="/managing.php">Back</a></button>
+        
+        <button><a href="managing.php">Back</a></button>
     </div>
 </body>
 
