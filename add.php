@@ -22,31 +22,28 @@
                 $hinhanh=$_FILES['hinhanh']['name'];
                 $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
+
                 if ($name == ""||$price == ""|| $descrip == "") 
                     {
-                        ?>
-                        <script>
-                            alert("Product information should not be blank!!");
-                        </script>
-                        <?php
+                        echo "Information should not be blank!!";
                     }
                 else
                     {
-                        $sql = "select * from product where proname='$name'";
+                        $sql = "select * from product where proname ='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
-                        ?> 
-                            <script>
-                                alert("The product is available!!");
-                            </script>
-                        <?php
+                            echo "Product is already available!!";
                         }
                         else
                         {
                             $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
                             pg_query($conn,$sql);
-                            ?> 
+                            echo  "Sign Up successful!!";
+                        }
+                    }
+            }
+             ?> 
                                 <script>
                                     alert(" Successful!");
                                     window.location.href = "/managing.php";
@@ -60,8 +57,7 @@
             <input type="text" name="proname" placeholder="Name"> <br>
             <input type="text" name="price" placeholder="Price"> <br>
             <input type="text" name="descrip" placeholder="Description"> <br>
-            <input type="file" name="hinhanh" placeholder="image" border = "1px">
-
+            <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
