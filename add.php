@@ -56,7 +56,8 @@
         <form action="add.php" method="POST">
             <input type="text" name="proname" placeholder="Name"> <br>
             <input type="text" name="price" placeholder="Price"> <br>
-            <input type="text" name="descrip" placeholder="Description"> <br>
+            <input type="text" name="descrip" placeholder="Description"> 
+            <br>
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
         <br>
