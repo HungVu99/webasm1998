@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="content">
-        <h1 font-style: >Add New Product </h1>
+    <div>
+        <h1>Add Information Of Product In Here</h1>
         <?php 
         require("connect.php");   
         if(isset($_POST["submit"]))
@@ -22,37 +22,49 @@
                 $hinhanh=$_FILES['hinhanh']['name'];
                 $hinhanh_tmp=$_FILEs['hinhanh']['tmp_name'];
                 move_uploaded_file($hinhanh_tmp,'./uploads/'.$hinhanh);
-
                 if ($name == ""||$price == ""|| $descrip == "") 
                     {
-                        echo "Information should not be blank!!";
+                        ?>
+                        <script>
+                            alert("Product information should not be blank!!");
+                        </script>
+                        <?php
                     }
                 else
                     {
-                        $sql = "select * from product where proname ='$name'";
+                        $sql = "select * from product where proname='$name'";
                         $query = pg_query($conn, $sql);
                         if(pg_num_rows($query)>0)
                         {
-                            echo "Product is already available!!";
+                        ?> 
+                            <script>
+                                alert("The product is available!!");
+                            </script>
+                        <?php
                         }
                         else
                         {
                             $sql = "INSERT INTO product(proname, price, descrip,hinhanh) VALUES ('$name','$price','$descrip','$hinhanh')";
                             pg_query($conn,$sql);
-                            echo  "Sign Up successful!!";
+                            ?> 
+                                <script>
+                                    alert(" Successful!");
+                                    window.location.href = "/managing.php";
+                                </script>
+                            <?php
                         }
                     }
             }
-             ?>
+			?>
         <form action="add.php" method="POST" enctype="multipart/form-data">
-            <input type="text" width="300" height="100" name="proname" placeholder="Name"> <br>
-            <input type="text" width="300" height="100" name="price" placeholder="Price"> <br>
-            <input type="text" width="300" height="100" name="descrip" placeholder="Description"> <br>
-            <input type="file" name="hinhanh" placeholder="image" border = "1px">
-            <button type="submit" value="Add" name="submit">Add</button>
+            <input type="text" name="proname" placeholder="Name"> <br>
+            <input type="text" name="price" placeholder="Price"> <br>
+            <input type="text" name="descrip" placeholder="Description"> <br>
+            <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
+            <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
-        
-        <button><a href="managing.php">Back</a></button>
+        <br>
+        <button><a href="/managing.php">Back</a></button>
     </div>
 </body>
 
