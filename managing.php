@@ -35,7 +35,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
 <body>
     <div>
         <h1>Managing Product</h1>
-        <table>
+        <table border="1px">
             <tr>
                 <th class="tit">ID</th>
                 <th class="tit">Name</th>
