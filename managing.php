@@ -8,13 +8,13 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
 	$rows = pg_query($sql);
 	if(pg_num_rows($rows)==1) { ?>
 		<script>
-            alert("Login successfully!!");
+            alert("Congratulations Login Successfully!!");
         </script>
     <?php
     } else { 
         ?>
             <script>
-                alert("Wrong Username/Password");
+                alert(" Username Or Password Is Wrong");
                 window.location.href = "/index.php";
             </script>
         <?php }
@@ -34,11 +34,12 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
 
 <body>
     <div>
-        <h1>Managing Product</h1>
+        <h1>Managing Product Information</h1>
         <table border="1px">
             <tr>
                 <th class="tit">ID</th>
                 <th class="tit">Name</th>
+                <th class="tit">Image</th>
                 <th class="tit">Price ($)</th>
                 <th class="tit">Description</th>
                 <th class="tit">Editing</th>
