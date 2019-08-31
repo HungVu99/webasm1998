@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="content">
         <h1>Add Information Of Product In Here</h1>
         <?php 
         require("connect.php");   
