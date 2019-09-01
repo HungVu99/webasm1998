@@ -37,12 +37,12 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
         <h1>Managing Product Information</h1>
         <table border="1px">
             <tr>
-                <th class="tit">ID</th>
-                <th class="tit">Name</th>
-                <th class="tit">Price ($)</th>
-                <th class="tit">Description</th>
+                <th class="tit">Product ID</th>
+                <th class="tit">Product Name</th>
+                <th class="tit">Price</th>
+                <th class="tit">Product Description</th>
                 <th class="tit">Image</th>
-                <th class="tit">Editing</th>
+                <th class="tit">Delete Product</th>
             </tr>
 
             <?php
