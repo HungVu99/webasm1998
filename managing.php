@@ -33,7 +33,7 @@ if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
 </head>
 
 <body>
-    <div>
+    <div class="content1">
         <h1>Managing Product Information</h1>
         <table border="1px">
             <tr>

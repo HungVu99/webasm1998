@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="content" border="1px " width= "80%" margin= "0px auto" margin-top = "20px" border= "1px"  background-color= "white">
+    <div class="content">
         <h1>Add Information Of Product In Here</h1>
         <?php 
         require("connect.php");   
