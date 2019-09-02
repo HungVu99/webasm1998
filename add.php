@@ -56,10 +56,10 @@
                     }
             }
 			?>
-        <form action="add.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="proname" placeholder="Name"> <br>
-            <input type="text" name="price" placeholder="Price"> <br>
-            <input type="text" name="descrip" placeholder="Description"> <br>
+        <form  action="add.php" method="POST" enctype="multipart/form-data">
+            <input type="text" width="120px" height="30" name="proname" placeholder="Name"> <br>
+            <input type="text" width="120px" height="30" name="price" placeholder="Price"> <br>
+            <input type="text" width="120px" height="30" name="descrip" placeholder="Description"> <br>
             <input type="file" name="hinhanh" placeholder="image" border = "1px"><br>
             <button type="submit" value="Add" name="submit">Add Information</button>
         </form>
