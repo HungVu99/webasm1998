@@ -14,7 +14,7 @@
         <h1>Login</h1>
         <form border = "1px" action="managing.php" method="POST">
             <input type="text" name="aduser" placeholder="Username"> <br>
-            <input type="password" name="adpass" placeholder="Password"> <br>
+            <input type="password" name="adpass" placeholder="Password"> <br> <br>
             <input type="submit" value="Login">
         </form>
 </body>
